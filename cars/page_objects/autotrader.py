@@ -19,138 +19,87 @@ class AutoTrader_Page(CarPage):
     @field
     def year(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("year")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("year")
 
     @field
     def description(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("additionalInfo").get("vehicleDescription")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("additionalInfo").get("vehicleDescription")
 
     @field
     def price(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("pricingDetail").get("salePrice")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("pricingDetail").get("salePrice")
 
     @field
     def comment_count(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("kbbConsumerReviewCount")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("kbbConsumerReviewCount")
 
     @field
     def engine(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("specifications").get("engineDescription").get("value")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("specifications").get("engineDescription").get("value")
 
     @field
     def drivetrain(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("specifications").get("driveType").get("value")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("specifications").get("driveType").get("value")
 
     @field
     def mileage(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("specifications").get("mileage").get("value")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("specifications").get("mileage").get("value")
 
     @field
     def vin(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("vin")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())),{}).get("vin")
 
     @field
     def transmission(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("specifications").get("transmission").get("value")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("specifications").get("transmission").get("value")
 
     @field
     def exterior(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("exteriorColorSimple")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("exteriorColorSimple")
 
     @field
     def interior(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("interiorColorSimple")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("interiorColorSimple")
 
     @field
     def body_style(self):
         data = self.json_data()
-        try:
-            return ", ".join(list(data.get("initialState").get("inventory").values())[0].get("bodyStyleCodes"))
-        except Exception:
-            return ''
+        return ", ".join(next(iter(list(data.get("initialState").get("inventory").values())), {}).get("bodyStyleCodes", []))
 
     @field
     def model(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("model")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("model")
 
     @field
     def make(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("inventory").values())[0].get("make")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("inventory").values())), {}).get("make")
 
     @field
     def location(self):
         data = self.json_data()
-        try:
-            return " ".join(list(data.get("initialState").get("owners").values())[0].get("location").get("address").values())
-        except Exception:
-            return ''
+        return " ".join(next(iter(list(data.get("initialState").get("owners").values())), {}).get("location", {}).get("address",{}).values())
 
     @field
     def seller(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("owners").values())[0].get("name")
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("owners").values())), {}).get("name")
 
     @field
     def seller_type(self):
         data = self.json_data()
-        try:
-            return list(data.get("initialState").get("owners").values())[0].get("dealer", 'dealer')
-        except Exception:
-            return ''
+        return next(iter(list(data.get("initialState").get("owners").values())), {}).get("dealer", 'dealer')
 
     @field
     def reserve(self):
