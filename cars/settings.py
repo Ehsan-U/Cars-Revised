@@ -137,9 +137,7 @@ FEEDS = {"Data.json": {"format": "json"}}
 ############################################################################
 
 START_URLS = [
-    "https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=691835633&isNewSearch=false&listingTypes=USED&makeCodeList=RAM&modelCodeList=RM1500&referrer=%2Fcars-for-sale%2Fram%2F1500%3F&clickType=listing",
-    "https://bringatrailer.com/listing/1975-acoma-mini-comtesse-3/",
-    "https://www.cargurus.com/Cars/cl-Certified-Ford-m2#listing=358101484/NONE/NATIONWIDE_SHIPPING",
-    "https://carsandbids.com/auctions/rEW1O0w7/2004-bmw-330ci-coupe",
-    "https://www.cars.com/vehicledetail/d9f27d98-377a-4bd5-9f67-d97d33f6bd6c/"
+    "https://bringatrailer.com/listing/2017-porsche-911-targa-4s-15/",
+    "https://www.cars.com/vehicledetail/aa91cf7f-e7d0-448f-a1c6-fc2eefb26164/",
+    "https://www.cargurus.com/Cars/inventorylisting/viewDetailsFilterViewInventoryListing.action?shopperListingsSearch=18624459#listing=362689728/NONE/DEFAULT"
 ]
