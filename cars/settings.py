@@ -137,7 +137,8 @@ FEEDS = {"Data.json": {"format": "json"}}
 ############################################################################
 
 START_URLS = [
-    "https://bringatrailer.com/listing/2017-porsche-911-targa-4s-15/",
-    "https://www.cars.com/vehicledetail/aa91cf7f-e7d0-448f-a1c6-fc2eefb26164/",
-    "https://www.cargurus.com/Cars/inventorylisting/viewDetailsFilterViewInventoryListing.action?shopperListingsSearch=18624459#listing=362689728/NONE/DEFAULT"
+    "https://www.cars.com/vehicledetail/102f5771-a96a-4039-80cd-e9943868204d/",
+    "https://www.cars.com/vehicledetail/dae6c883-39f6-4dde-a570-3792f409a885/",
+    "https://www.cars.com/vehicledetail/ab68e6ca-3e8a-4e7c-af21-20150db55730/",
+    "https://www.cars.com/vehicledetail/769c5328-d173-4340-b508-e3a3a04340d6/",
 ]

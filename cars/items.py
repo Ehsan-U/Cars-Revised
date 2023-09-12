@@ -49,6 +49,7 @@ class CarItem(scrapy.Item):
     bids = scrapy.Field()
     reserve = scrapy.Field(output_processor=TakeFirst())
     scraped_date = scrapy.Field(output_processor=TakeFirst())
+    source_page = scrapy.Field(output_processor=TakeFirst())
 
 
 

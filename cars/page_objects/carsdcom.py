@@ -30,58 +30,51 @@ class CarsDCom_Page(CarPage):
     @field
     def engine(self):
         target = 'engine'
-        for name, val in zip(self.xpath("//dl[@class='fancy-description-list']/dt/text()").getall(),
-                             self.xpath("//dl[@class='fancy-description-list']/dd/text()").getall()):
-            if target.lower() in name.lower():
-                return val
+        for name in self.xpath("//dl[@class='fancy-description-list']/dt"):
+            if target.lower() in name.xpath("./text()").get('').lower():
+                return name.xpath("./following-sibling::dd/text()").get('')
 
     @field
     def drivetrain(self):
         target = 'drivetrain'
-        for name, val in zip(self.xpath("//dl[@class='fancy-description-list']/dt/text()").getall(),
-                             self.xpath("//dl[@class='fancy-description-list']/dd/text()").getall()):
-            if target.lower() in name.lower():
-                return val
+        for name in self.xpath("//dl[@class='fancy-description-list']/dt"):
+            if target.lower() in name.xpath("./text()").get('').lower():
+                return name.xpath("./following-sibling::dd/text()").get('')
 
     @field
     def mileage(self):
         target = 'mileage'
-        for name, val in zip(self.xpath("//dl[@class='fancy-description-list']/dt/text()").getall(),
-                             self.xpath("//dl[@class='fancy-description-list']/dd/text()").getall()):
-            if target.lower() in name.lower():
-                return val
+        for name in self.xpath("//dl[@class='fancy-description-list']/dt"):
+            if target.lower() in name.xpath("./text()").get('').lower():
+                return name.xpath("./following-sibling::dd/text()").get('')
 
     @field
     def vin(self):
         target = 'vin'
-        for name, val in zip(self.xpath("//dl[@class='fancy-description-list']/dt/text()").getall(),
-                             self.xpath("//dl[@class='fancy-description-list']/dd/text()").getall()):
-            if target.lower() in name.lower():
-                return val
+        for name in self.xpath("//dl[@class='fancy-description-list']/dt"):
+            if target.lower() in name.xpath("./text()").get('').lower():
+                return name.xpath("./following-sibling::dd/text()").get('')
 
     @field
     def transmission(self):
         target = 'transmission'
-        for name, val in zip(self.xpath("//dl[@class='fancy-description-list']/dt/text()").getall(),
-                             self.xpath("//dl[@class='fancy-description-list']/dd/text()").getall()):
-            if target.lower() in name.lower():
-                return val
+        for name in self.xpath("//dl[@class='fancy-description-list']/dt"):
+            if target.lower() in name.xpath("./text()").get('').lower():
+                return name.xpath("./following-sibling::dd/text()").get('')
 
     @field
     def exterior(self):
         target = 'exterior'
-        for name, val in zip(self.xpath("//dl[@class='fancy-description-list']/dt/text()").getall(),
-                             self.xpath("//dl[@class='fancy-description-list']/dd/text()").getall()):
-            if target.lower() in name.lower():
-                return val
+        for name in self.xpath("//dl[@class='fancy-description-list']/dt"):
+            if target.lower() in name.xpath("./text()").get('').lower():
+                return name.xpath("./following-sibling::dd/text()").get('')
 
     @field
     def interior(self):
         target = 'interior'
-        for name, val in zip(self.xpath("//dl[@class='fancy-description-list']/dt/text()").getall(),
-                             self.xpath("//dl[@class='fancy-description-list']/dd/text()").getall()):
-            if target.lower() in name.lower():
-                return val
+        for name in self.xpath("//dl[@class='fancy-description-list']/dt"):
+            if target.lower() in name.xpath("./text()").get('').lower():
+                return name.xpath("./following-sibling::dd/text()").get('')
 
     @field
     def body_style(self):

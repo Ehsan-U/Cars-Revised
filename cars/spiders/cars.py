@@ -41,6 +41,7 @@ class Cars(scrapy.Spider):
 
     async def parse_car(self, response, page: CarPage):
         item = await page.to_item()
+        item['source_page'] = response.url
         loader = ItemLoader(item=CarItem())
         for k, v in item.items():
             loader.add_value(k, v)
