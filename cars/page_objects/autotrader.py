@@ -23,11 +23,11 @@ class AutoTrader_Page(CarPage):
 
     @field
     def description(self):
-        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("additionalInfo").get("vehicleDescription")
+        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("additionalInfo", {}).get("vehicleDescription")
 
     @field
     def price(self):
-        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("pricingDetail").get("salePrice")
+        return str(next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("pricingDetail", {}).get("salePrice"))
 
     @field
     def comment_count(self):
@@ -35,15 +35,15 @@ class AutoTrader_Page(CarPage):
 
     @field
     def engine(self):
-        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("specifications").get("engineDescription").get("value")
+        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("specifications", {}).get("engineDescription", {}).get("value")
 
     @field
     def drivetrain(self):
-        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("specifications").get("driveType").get("value")
+        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("specifications", {}).get("driveType", {}).get("value")
 
     @field
     def mileage(self):
-        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("specifications").get("mileage").get("value")
+        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("specifications", {}).get("mileage", {}).get("value")
 
     @field
     def vin(self):
@@ -51,7 +51,7 @@ class AutoTrader_Page(CarPage):
 
     @field
     def transmission(self):
-        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("specifications").get("transmission").get("value")
+        return next(iter(list(self.json_data.get("initialState").get("inventory").values())), {}).get("specifications", {}).get("transmission", {}).get("value")
 
     @field
     def exterior(self):

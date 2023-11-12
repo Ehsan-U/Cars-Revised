@@ -22,7 +22,7 @@ class Cars(scrapy.Spider):
                 match = re.search("\d{9}", url)
                 if match:
                     url = f'https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId={match.group()}'
-                    yield scrapy.Request(url, callback=self.parse_car, meta={"playwright":True})
+                    yield scrapy.Request(url, callback=self.parse_car)
             elif 'cargurus.com' in url:
                 match = re.search("\d{9}", url)
                 if match:
@@ -52,3 +52,7 @@ class Cars(scrapy.Spider):
         page = failure.request.meta.get("playwright_page")
         if page:
             await page.close()
+
+
+
+

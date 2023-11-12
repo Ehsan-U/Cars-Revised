@@ -137,8 +137,9 @@ FEEDS = {"Data.json": {"format": "json"}}
 ############################################################################
 
 START_URLS = [
-    "https://www.cars.com/vehicledetail/102f5771-a96a-4039-80cd-e9943868204d/",
-    "https://www.cars.com/vehicledetail/dae6c883-39f6-4dde-a570-3792f409a885/",
-    "https://www.cars.com/vehicledetail/ab68e6ca-3e8a-4e7c-af21-20150db55730/",
-    "https://www.cars.com/vehicledetail/769c5328-d173-4340-b508-e3a3a04340d6/",
+    "https://carsandbids.com/auctions/3gepyGMR/2005-lotus-elise",
+    "https://www.cars.com/vehicledetail/149bd186-5252-46ad-ad6e-8fcb90ffbeab/",
+    "https://bringatrailer.com/listing/1953-chevrolet-3100-icon/",
+    "https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=698714879",
+    "https://www.cargurus.com/Cars/inventorylisting/viewDetailsFilterViewInventoryListing.action?zip=41953&distance=100#listing=357948995/PRIORITY",
 ]
