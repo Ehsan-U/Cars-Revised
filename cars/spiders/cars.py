@@ -4,6 +4,8 @@ from cars.items import CarItem
 from scrapy.loader import ItemLoader
 from scrapy_playwright.page import PageMethod
 import re
+from scrapy import signals
+import pandas as pd
 
 
 class Cars(scrapy.Spider):
@@ -17,7 +19,7 @@ class Cars(scrapy.Spider):
     }
 
     def start_requests(self):
-        for url in self.settings.get('START_URLS'):
+        for url in self.links:
             if 'autotrader.com' in url:
                 match = re.search("\d{9}", url)
                 if match:
@@ -54,5 +56,12 @@ class Cars(scrapy.Spider):
             await page.close()
 
 
+    @classmethod
+    def from_crawler(cls, crawler, *args, **kwargs):
+        spider = super(Cars, cls).from_crawler(crawler, *args, **kwargs)
+        crawler.signals.connect(spider.spider_opened, signal=signals.spider_opened)
+        return spider
 
-
+    def spider_opened(self, spider):
+        df = pd.read_csv("urls.csv")
+        self.links = [row['link'] for idx, row in df.iterrows()]

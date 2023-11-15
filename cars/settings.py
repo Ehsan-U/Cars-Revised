@@ -136,10 +136,3 @@ FEEDS = {"Data.json": {"format": "json"}}
 ############################################################################
 ############################################################################
 
-START_URLS = [
-    "https://carsandbids.com/auctions/3gepyGMR/2005-lotus-elise",
-    "https://www.cars.com/vehicledetail/149bd186-5252-46ad-ad6e-8fcb90ffbeab/",
-    "https://bringatrailer.com/listing/1953-chevrolet-3100-icon/",
-    "https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId=698714879",
-    "https://www.cargurus.com/Cars/inventorylisting/viewDetailsFilterViewInventoryListing.action?zip=41953&distance=100#listing=357948995/PRIORITY",
-]

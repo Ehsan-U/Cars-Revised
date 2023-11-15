@@ -3,3 +3,4 @@ scrapy_playwright
 scrapy-poet
 web_poet
 dateparser
+pandas
