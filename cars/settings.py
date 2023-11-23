@@ -96,9 +96,9 @@ ROBOTSTXT_OBEY = False
 #HTTPCACHE_IGNORE_HTTP_CODES = []
 #HTTPCACHE_STORAGE = "scrapy.extensions.httpcache.FilesystemCacheStorage"
 DOWNLOAD_HANDLERS={
-            "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
-            "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
-        }
+    "http": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+    "https": "scrapy_playwright.handler.ScrapyPlaywrightDownloadHandler",
+}
 # Set settings whose default value is deprecated to a future-proof value
 REQUEST_FINGERPRINTER_IMPLEMENTATION = "2.7"
 TWISTED_REACTOR = "twisted.internet.asyncioreactor.AsyncioSelectorReactor"
@@ -114,7 +114,10 @@ PLAYWRIGHT_MAX_PAGES_PER_CONTEXT = 4
 PLAYWRIGHT_DEFAULT_NAVIGATION_TIMEOUT = 60000
 PLAYWRIGHT_ABORT_REQUEST = request_should_abort
 PLAYWRIGHT_BROWSER_TYPE = 'firefox'
-
+PLAYWRIGHT_LAUNCH_OPTIONS = {
+    "headless": True,
+    "timeout": 120 * 1000,  # 120 seconds
+}
 
 DOWNLOADER_MIDDLEWARES = {
     "scrapy_poet.InjectionMiddleware": 543,

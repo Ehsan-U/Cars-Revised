@@ -62,6 +62,7 @@ class Cars(scrapy.Spider):
         crawler.signals.connect(spider.spider_opened, signal=signals.spider_opened)
         return spider
 
+
     def spider_opened(self, spider):
         df = pd.read_csv("urls.csv")
         self.links = [row['link'] for idx, row in df.iterrows()]
