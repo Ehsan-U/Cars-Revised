@@ -6,6 +6,7 @@ from scrapy_playwright.page import PageMethod
 import re
 from scrapy import signals
 import pandas as pd
+from urllib.parse import urlparse
 
 
 class Cars(scrapy.Spider):
@@ -26,7 +27,8 @@ class Cars(scrapy.Spider):
                     url = f'https://www.autotrader.com/cars-for-sale/vehicledetails.xhtml?listingId={match.group()}'
                     yield scrapy.Request(url, callback=self.parse_car)
             elif 'cargurus.com' in url:
-                match = re.search("\d{9}", url)
+                fragment = urlparse(url).fragment
+                match = re.search("\d{9}", fragment)
                 if match:
                     url = f"https://www.cargurus.com/Cars/detailListingJson.action?inventoryListing={match.group()}"
                     yield scrapy.Request(url, callback=self.parse_car)
